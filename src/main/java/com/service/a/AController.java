@@ -9,6 +9,11 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class AController {
 
+    @RequestMapping("/")
+    public String getService(){
+        return "This is a sample micro service build to test istio.";
+    }
+
     @RequestMapping("/getA")
     public String getServiceA(){
         return "Service A ( From Service A)";
