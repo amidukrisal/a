@@ -20,16 +20,16 @@ public class AController {
     }
 
     @RequestMapping("/getB")
-    public String getServiceB(@Value("${app.serviceb.uri}") String uri){
-        String buri = uri+"/getB";
+    public String getServiceB(@Value("${app.serviceb.uri}") String sburi){
+        String buri = sburi+"/getB";
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(buri, String.class);
         return result + "<br/>"+"<br/>"+"Calling From Service A";
     }
 
     @RequestMapping("/getC")
-    public String getServiceC(@Value("${app.servicec.uri}") String uri){
-        String curi = uri+"/getC";
+    public String getServiceC(@Value("${app.servicec.uri}") String scuri){
+        String curi = scuri+"/getC";
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(curi, String.class);
         return result + "<br/>"+"<br/>"+"Calling From Service A";
